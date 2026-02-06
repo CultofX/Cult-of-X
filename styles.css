@@ -76,6 +76,13 @@ h2 { font-size: 3.5rem; text-align: center; margin-bottom: 3rem; background: lin
 .project-title { font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--pink); }
 .project-desc { font-size: 0.98rem; opacity: 0.85; margin-bottom: 1.2rem; }
 
+/* Placeholder / blur-up wrapper */
+.img-wrapper { position: relative; background-size: cover; background-position: center; border-bottom: 1px solid #3a1a5c; overflow: hidden; }
+.img-wrapper::after { content: ''; display: block; padding-bottom: 56.25%; }
+.img-wrapper > picture, .img-wrapper > img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.img-wrapper img { display: block; width: 100%; height: 100%; object-fit: cover; transition: opacity 420ms ease, transform 420ms ease; opacity: 0; transform: scale(1.02); }
+.img-wrapper img.loaded { opacity: 1; transform: scale(1); }
+
 /* Contact */
 .contact-content { text-align: center; max-width: 600px; margin: 0 auto; }
 .social-links { margin: 2.5rem 0; font-size: 1.4rem; }
